@@ -239,10 +239,14 @@ public class DESUtil {
 				}
 				return toReturn;
 			}
-			
-			
-			
-			public static void main(String[] args) throws Exception {
+
+
+	/**
+	 * 自定义密钥
+	 * @param args
+	 * @throws Exception
+	 */
+	public static void main(String[] args) throws Exception {
 				//System.out.println(encrypt("15019205926"));
 				System.out.println(encrypt("18823786682"));
 				System.out.println(decrypt("4B28EE46953C64488E68CBF1EC308C108FA19E5BADAE45E8"));
