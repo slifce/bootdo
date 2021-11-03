@@ -27,4 +27,14 @@ public class FrequentContactServiceImpl implements FrequentContactService{
     public List<FrequentContact> selectAll() {
         return frequentContactDao.selectAll();
     }
+
+    @Override
+    public int save(FrequentContact frequentContact) {
+        return frequentContactDao.save(frequentContact);
+    }
+
+    @Override
+    public int updateSysIdById(FrequentContact frequentContact) {
+        return frequentContactDao.updateSysIdById(frequentContact);
+    }
 }

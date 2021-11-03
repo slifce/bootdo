@@ -13,4 +13,53 @@
         from  frequent_contact
     </select>
 
+    <insert id="save" parameterType="com.bootdo.frequent.domain.FrequentContact" useGeneratedKeys="true" keyProperty="id">
+        insert into frequent_contact
+        (
+            `sysId`,
+            `chineseName`,
+            `englishName`,
+            `sex`,
+            `identityType`,
+            `identityCode`,
+            `relationType`,
+            `mobilePhone`,
+            `email`,
+            `pcode`,
+            `ccode`,
+            `areacode`,
+            `address`,
+            `isFrequent`,
+            `birthday`,
+            `addDate`
+        )
+        values
+        (
+            #{sysId},
+            #{chineseName},
+            #{englishName},
+            #{sex},
+            #{identityType},
+            #{identityCode},
+            #{relationType},
+            #{mobilePhone},
+            #{email},
+            #{pcode},
+            #{ccode},
+            #{areacode},
+            #{address},
+            #{isFrequent},
+            #{birthday},
+            #{addDate}
+        )
+    </insert>
+
+    <update id="updateSysIdById" parameterType="com.bootdo.frequent.domain.FrequentContact">
+        update frequent_contact
+        <set>
+            <if test="sysId != null">`sysId` = #{sysId}</if>
+        </set>
+        where id = #{id}
+    </update>
+
 </mapper>

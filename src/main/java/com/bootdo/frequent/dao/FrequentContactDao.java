@@ -15,4 +15,7 @@ public interface FrequentContactDao {
 
     List<FrequentContact> selectAll();
 
+    int save(FrequentContact frequentContact);
+
+    int updateSysIdById(FrequentContact frequentContact);
 }

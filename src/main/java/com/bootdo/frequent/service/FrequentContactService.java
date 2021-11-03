@@ -13,4 +13,7 @@ public interface FrequentContactService {
 
     List<FrequentContact> selectAll();
 
+    int save(FrequentContact frequentContact);
+
+    int updateSysIdById(FrequentContact frequentContact);
 }
