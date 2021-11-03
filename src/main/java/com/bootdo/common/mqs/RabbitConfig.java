@@ -7,12 +7,6 @@ import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
-/**
- * @Author : JCccc
- * @CreateTime : 2019/9/3
- * @Description :
- **/
 @Configuration
 public class RabbitConfig {
 

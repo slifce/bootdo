@@ -8,11 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @Author : JCccc
- * @CreateTime : 2019/9/4
- * @Description :
- **/
 @Configuration
 public class MessageListenerConfig {
 
