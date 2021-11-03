@@ -47,6 +47,7 @@ public class FrequentContactController {
     @GetMapping("/sayHello")
     public String sayHello() {
         System.out.println("hello");
+        int i = 5;
         return "hello";
     }
 
