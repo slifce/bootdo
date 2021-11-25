@@ -64,3 +64,7 @@ Nacos 可以与 Spring, Spring Boot, Spring Cloud 集成，并能代替 Spring C
 
 https://www.cnblogs.com/coder-qi/p/11072500.html
 spring源码与调试
+
+
+https://blog.csdn.net/weixin_41624318/article/details/108712319
+idea版本和gradle版本对应关系
