@@ -3,7 +3,7 @@
 自学自测自省
 不断更新提升
 dev
-
+测试修改master
 
 Nacos
 什么是 Nacos？
@@ -59,3 +59,11 @@ Nacos 可以与 Spring, Spring Boot, Spring Cloud 集成，并能代替 Spring C
 
 通过 Nacos Server 和 spring-cloud-starter-alibaba-nacos-config 实现配置的动态变更。
 通过 Nacos Server 和 spring-cloud-starter-alibaba-nacos-discovery 实现服务的注册与发现。
+
+
+https://www.cnblogs.com/coder-qi/p/11072500.html
+spring源码与调试
+
+
+https://blog.csdn.net/weixin_41624318/article/details/108712319
+idea版本和gradle版本对应关系
