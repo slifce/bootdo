@@ -67,3 +67,18 @@ spring源码与调试
 
 https://blog.csdn.net/weixin_41624318/article/details/108712319
 idea版本和gradle版本对应关系
+
+mysql 命令行
+mysql -u root -p bootdo
+
+enter password:xxx
+
+show databases;
+
+show tables;
+
+show variables like '%log_bin%';
+
+show variavles like '%datadir%';
+
+explain select * from sys_user where dept_id = 6;
