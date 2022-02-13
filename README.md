@@ -299,3 +299,18 @@ spring ioc 是一种思想，即将容器中的所有bean交给spring进行管�
 3.删除完成后重新创建索引，创建索引也很快
 4.与之前的直接删除绝对是要快速很多，更别说万一删除中断，一切删除会回滚
 
+=======
+mysql 命令行
+mysql -u root -p bootdo
+
+enter password:xxx
+
+show databases;
+
+show tables;
+
+show variables like '%log_bin%';
+
+show variavles like '%datadir%';
+
+explain select * from sys_user where dept_id = 6;
