@@ -315,4 +315,6 @@ show variavles like '%datadir%';
 
 explain select * from sys_user where dept_id = 6;
 
-masrer update
+master update
+
+dev commit
