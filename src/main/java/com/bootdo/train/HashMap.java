@@ -8,6 +8,8 @@ package com.bootdo.train;
  */
 public class HashMap<K, V> implements Map<K, V> {
 
+    //需要考虑自定义扩容带来的影响
+
     public HashMap() {
         table = new Entry[16];
     }
