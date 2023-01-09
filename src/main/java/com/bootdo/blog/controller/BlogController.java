@@ -30,7 +30,7 @@ public class BlogController {
 
 	@ResponseBody
 	@GetMapping("/open/list")
-	public PageUtils opentList(@RequestParam Map<String, Object> params) {
+	public PageUtils openList(@RequestParam Map<String, Object> params) {
 		Query query = new Query(params);
 		List<ContentDO> bContentList = bContentService.list(query);
 		int total = bContentService.count(query);
