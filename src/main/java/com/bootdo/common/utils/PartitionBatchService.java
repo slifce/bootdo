@@ -8,9 +8,9 @@ import java.util.List;
 public class PartitionBatchService {
 
     public static void main(String[] args) {
-        List<OrgBaseTreeVO> OrgBaseTreeVOTotals = getOrgBaseTreeVOs();
-        List<List<OrgBaseTreeVO>> OrgBaseTreeVOsPartition = Lists.partition(OrgBaseTreeVOTotals, 1000);
-        for (List<OrgBaseTreeVO> OrgBaseTreeVOs : OrgBaseTreeVOsPartition) {
+        List<OrgInfo> OrgBaseTreeVOTotals = getOrgBaseTreeVOs();
+        List<List<OrgInfo>> OrgBaseTreeVOsPartition = Lists.partition(OrgBaseTreeVOTotals, 1000);
+        for (List<OrgInfo> OrgBaseTreeVOs : OrgBaseTreeVOsPartition) {
             // 处理一批1000 的OrgBaseTreeVO数据
             doSomething(OrgBaseTreeVOs);
             // 更新一批1000 的OrgBaseTreeVO数据
@@ -23,8 +23,8 @@ public class PartitionBatchService {
      *
      * @return
      */
-    private static List<OrgBaseTreeVO> getOrgBaseTreeVOs() {
-        return Lists.newArrayList(new OrgBaseTreeVO());
+    private static List<OrgInfo> getOrgBaseTreeVOs() {
+        return Lists.newArrayList(new OrgInfo());
     }
 
     /**
@@ -32,7 +32,7 @@ public class PartitionBatchService {
      *
      * @param orgBaseTreeVOs
      */
-    private static void updates(List<OrgBaseTreeVO> orgBaseTreeVOs) {
+    private static void updates(List<OrgInfo> orgBaseTreeVOs) {
     }
 
     /**
@@ -40,7 +40,7 @@ public class PartitionBatchService {
      *
      * @param orgBaseTreeVOs
      */
-    private static void doSomething(List<OrgBaseTreeVO> orgBaseTreeVOs) {
+    private static void doSomething(List<OrgInfo> orgBaseTreeVOs) {
     }
 
 }
