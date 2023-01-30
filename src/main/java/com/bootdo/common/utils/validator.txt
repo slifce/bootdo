@@ -51,7 +51,7 @@ package code.validator.base;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 续签通用校验器接口
+ * 通用校验器接口
  *
  * @since 2020/11/27
  */
@@ -81,7 +81,7 @@ public interface ValidatorBase {
         /**
          * 真正的校验方法，转换一下返回类型
          *
-         * @param dynamicObject 签署申请单实体
+         * @param dynamicObject 申请单实体
          * @return 错误信息
          */
         protected abstract String realValidate(DynamicObject dynamicObject);
@@ -89,7 +89,7 @@ public interface ValidatorBase {
         /**
          * 校验，返回错误信息
          *
-         * @param dynamicObject 签署申请实体
+         * @param dynamicObject 申请实体
          * @return 错误信息
          */
         @Override
@@ -117,7 +117,7 @@ import code.validator.rule.IsStartValidator;
 
 public class ValidatorFactory {
     /**
-     * 获取待启动人员导入校验器holder
+     * 导入校验器holder
      *
      * @param dynamicObject 数据
      * @return 校验器holder
@@ -130,7 +130,7 @@ public class ValidatorFactory {
     }
 
     /**
-     * 获取待启动人员手动新增校验器holder
+     * 手动新增校验器holder
      *
      * @param dynamicObject 数据
      * @return 校验器holder
@@ -138,7 +138,7 @@ public class ValidatorFactory {
     public static ValidatorHolder getManualValidatorHolder(DynamicObject dynamicObject) {
         // 只抛出第一条不符合校验的提示
         ValidatorHolder holder = new ValidatorHolder(dynamicObject);
-        // 原合同校验
+        // 原校验
         return getCommonValidatorHolder(holder);
     }
 
@@ -175,7 +175,7 @@ public class ValidatorHolder {
     private LinkedList<ValidatorBase> validators;
 
     /**
-     * 签署申请实体
+     * 申请实体
      */
     private DynamicObject signObj;
 
