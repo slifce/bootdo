@@ -14,7 +14,7 @@ public interface ValidatorBase {
      * @param dynamicObject 动态对象
      * @return 错误信息
      */
-    Object validate(DynamicObject dynamicObject);
+    String validate(DynamicObject dynamicObject);
 
     /**
      * 是否继续校验
@@ -45,7 +45,7 @@ public interface ValidatorBase {
          * @return 错误信息
          */
         @Override
-        public Object validate(DynamicObject dynamicObject) {
+        public String validate(DynamicObject dynamicObject) {
             return realValidate(dynamicObject);
         }
 

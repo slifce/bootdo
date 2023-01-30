@@ -24,7 +24,7 @@ public abstract class AbstractErrorMsgSignValidator implements ValidatorBase {
      * @return 错误信息
      */
     @Override
-    public Object validate(DynamicObject dynamicObject) {
+    public String validate(DynamicObject dynamicObject) {
         return realValidate(dynamicObject);
     }
 

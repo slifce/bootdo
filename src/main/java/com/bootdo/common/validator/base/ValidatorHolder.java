@@ -61,7 +61,7 @@ public class ValidatorHolder {
      *
      * @return 校验结果
      */
-    public Object startValidate() {
+    public String startValidate() {
         return validateAll ? validateAll() : validateFirst();
     }
 
@@ -72,9 +72,9 @@ public class ValidatorHolder {
      *
      * @return 校验结果
      */
-    private Object validateFirst() {
+    private String validateFirst() {
         for (ValidatorBase validator : validators) {
-            Object validateResult = validator.validate(signObj);
+            String validateResult = validator.validate(signObj);
             if (!validator.continueValidate()) {
                 return validateResult;
             }
@@ -89,11 +89,11 @@ public class ValidatorHolder {
      */
     private String validateAll() {
         StringBuffer errMsg = new StringBuffer();
-        List<Object> allValidateError = getAllValidateError();
+        List<String> allValidateError = getAllValidateError();
         allValidateError.forEach(validateResult -> {
-            if (!StringUtils.isEmpty((String) validateResult)) {
+            if (!StringUtils.isEmpty(validateResult)) {
                 errMsg.append(validateResult);
-                if (!String.class.cast(validateResult).endsWith(";")) {
+                if (!validateResult.endsWith(";")) {
                     errMsg.append(";");
                 }
             }
@@ -106,10 +106,10 @@ public class ValidatorHolder {
      *
      * @return 错误信息集合，所有校验器的错误信息
      */
-    private List<Object> getAllValidateError() {
-        List<Object> errorList = new ArrayList<>(10);
+    private List<String> getAllValidateError() {
+        List<String> errorList = new ArrayList<>(10);
         for (ValidatorBase validator : validators) {
-            Object validateResult = validator.validate(signObj);
+            String validateResult = validator.validate(signObj);
             if (!Objects.isNull(validateResult)) {
                 errorList.add(validateResult);
             }
