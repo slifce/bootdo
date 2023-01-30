@@ -3,6 +3,7 @@ package com.bootdo;
 import com.bootdo.common.validator.base.DynamicObject;
 import com.bootdo.common.validator.base.ValidatorFactory;
 import com.bootdo.common.validator.base.ValidatorHolder;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 public class TestValidator {
@@ -17,13 +18,11 @@ public class TestValidator {
 
     public static ImmutablePair<Boolean, String> validatorSingle(DynamicObject dynamicObject) {
         ImmutablePair<Boolean, String> result = ImmutablePair.of(Boolean.TRUE, null);
-        // 错误信息，校验通过时为空
-        String errorMsg;
         // 根据前置业务类型进行不同校验器的组合
         ValidatorHolder importValidatorHolder = ValidatorFactory.getManualValidatorHolder(dynamicObject);
-        Object error = importValidatorHolder.startValidate();
-        if (error != null) {
-            errorMsg = String.class.cast(error);
+        // 错误信息，校验通过时为空
+        String errorMsg = importValidatorHolder.startValidate();
+        if (!StringUtils.isEmpty(errorMsg)) {
             result = ImmutablePair.of(Boolean.FALSE, errorMsg);
         }
         return result;
@@ -31,13 +30,11 @@ public class TestValidator {
 
     public static ImmutablePair<Boolean, String> validatorAll(DynamicObject dynamicObject) {
         ImmutablePair<Boolean, String> result = ImmutablePair.of(Boolean.TRUE, null);
-        // 错误信息，校验通过时为空
-        String errorMsg;
         // 根据前置业务类型进行不同校验器的组合
         ValidatorHolder importValidatorHolder = ValidatorFactory.getImportValidatorHolder(new DynamicObject());
-        Object error = importValidatorHolder.startValidate();
-        if (error != null) {
-            errorMsg = String.class.cast(error);
+        // 错误信息，校验通过时为空
+        String errorMsg = importValidatorHolder.startValidate();
+        if (!StringUtils.isEmpty(errorMsg)) {
             result = ImmutablePair.of(Boolean.FALSE, errorMsg);
         }
         return result;
