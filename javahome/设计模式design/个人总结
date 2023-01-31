@@ -57,10 +57,19 @@ new WxPay(newPayFaceMode()) 、 new ZfbPay(new PayFingerprintMode())
 5.外观模式（门面模式）
 外观模式也可以说⻔⾯模式，结合 SpringBoot 中的⾃定义 starter 中间件开发的⽅式，统⼀处理所有需要⽩名单的地⽅。
 后续接下来的实现中，会涉及的知识；
-1. SpringBoot的starter中间件开发⽅式。
-2. ⾯向切⾯编程和⾃定义注解的使⽤。
-3. 外部⾃定义配置信息的透传，SpringBoot与Spring不同，对于此类⽅式获取⽩名单配置存在差异。
+①. SpringBoot的starter中间件开发⽅式。
+②. ⾯向切⾯编程和⾃定义注解的使⽤。
+③. 外部⾃定义配置信息的透传，SpringBoot与Spring不同，对于此类⽅式获取⽩名单配置存在差异。
 
 6.享元模式
 享元模式，主要在于共享通⽤对象，减少内存的使⽤，提升系统的访问效率。
 ⽽这部分共享对象通常⽐较耗费内存或者需要查询⼤量接⼝或者使⽤数据库资源，因此统⼀抽离作为共享对象使⽤。
+另外通过 map 结构的使⽤⽅式也可以看到，使⽤⼀个固定id来存放和获取对象，是⾮常关键的点。
+static Map<Long, Activity> activityMap = new HashMap<Long, Activity>();
+⽽且不只是在享元模式中使⽤，⼀些其他⼯⼚模式、适配器模式、组合模式中都可以通过map结构存放服务供外部获取，减少ifelse的判断使⽤。
+
+7.代理模式
+对Spring的bean定义以及注册和对代理以及反射调⽤的知识有用到代理模式
+①. BeanDefinitionRegistryPostProcessor ，spring的接⼝类⽤于处理对bean的定义注册。
+②. GenericBeanDefinition ，定义bean的信息，在mybatis-spring中使⽤到的是； ScannedGenericBeanDefinition 略有不同。
+③. FactoryBean ，⽤于处理bean⼯⼚的类，这个类⾮常⻅。
