@@ -73,3 +73,13 @@ static Map<Long, Activity> activityMap = new HashMap<Long, Activity>();
 ①. BeanDefinitionRegistryPostProcessor ，spring的接⼝类⽤于处理对bean的定义注册。
 ②. GenericBeanDefinition ，定义bean的信息，在mybatis-spring中使⽤到的是； ScannedGenericBeanDefinition 略有不同。
 ③. FactoryBean ，⽤于处理bean⼯⼚的类，这个类⾮常⻅。
+
+行为模式
+1.责任链模式
+多个组装的校验器
+责任链模式可以让各个服务模块更加清晰，⽽每⼀个模块间可以通过 next 的⽅式进⾏获取。
+⽽每⼀个 next 是由继承的统⼀抽象类实现的。最终所有类的职责可以动态的进⾏编排使⽤，编排的过程可以做成可配置化。
+包括最核⼼的责任链创建，实际的业务中会包装到控制层； 
+AuthLink authLink = new Level3AuthLink("1000013", "王⼯") .appendNext(new Level2AuthLink("1000012","张经理") .appendNext(new Level1AuthLink("1000011", "段总"))); 
+通过把不同的责任节点进⾏组装，构成⼀条完整业务的责任链。
+接下⾥不断的执⾏查看审核链路 authLink.doAuth(...) ，通过返回结果对数据进⾏3、2、1级负责⼈审核，直⾄最后审核全部完成。
