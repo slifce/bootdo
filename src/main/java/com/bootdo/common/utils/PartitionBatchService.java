@@ -1,3 +1,6 @@
+package com.bootdo.common.utils;
+
+import com.bootdo.brave.domain.OrgInfo;
 import com.google.common.collect.Lists;
 
 import java.util.List;
