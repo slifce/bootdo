@@ -30,11 +30,11 @@ Queue保持一个队列(先进先出)的顺序
 Map一组成对的"键值对"对象
 
 7.编写单例
-private Singleton(){};
-private Static final volatile Singleton singleton = null;
+private Singleton(){}
+private static volatile Singleton singleton = null;
 public static Singleton getSingleton(){
     if(singleton == null){
-        Synchronized(Singleton.class){
+        synchronized(Singleton.class){
             if(singleton == null){
                 singleton = new Singleton();
             }
